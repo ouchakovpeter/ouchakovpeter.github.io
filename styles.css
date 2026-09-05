@@ -26,9 +26,71 @@ box-sizing:border-box;
 body{
 font-family: "Segoe UI", sans-serif;
 line-height:1.6;
-background: 
-    linear-gradient(135deg, var(--color-surface), var(--color-bg));
+background:
+    radial-gradient(ellipse at 20% 80%, rgba(0, 130, 190, 0), transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(40, 100, 255, .4), transparent 55%),
+    linear-gradient(135deg, #020914, #06253a);
 color:var(--color-text);
+}
+
+.aurora-line {
+    position: absolute;
+    width: 120%;
+    height: 160px;
+    left: 15%;
+    border-top: 20px solid rgba(168, 224, 245, 0.507);
+    filter: blur(100px);
+}
+
+.line1 {
+    top: 50%;
+    transform: rotate(-30deg) scale(1.3);
+    border-radius: 10%;
+    animation: auroraMoveLine1 12s ease-in-out infinite alternate;
+}
+
+@keyframes auroraMoveLine1 {
+    from {
+        transform: translateX(-2%) rotate(-60deg);
+    }
+
+    to {
+        transform: translateX(2%) rotate(-90deg);
+    }
+}
+
+.line2 {
+    top: 58%;
+    transform: rotate(-40deg) scale(1.3);
+    border-radius: 50%;
+    animation: auroraMoveLine2 12s ease-in-out infinite alternate;
+}
+
+@keyframes auroraMoveLine2 {
+    from {
+        transform: translateX(-2%) rotate(-65deg);
+    }
+
+    to {
+        transform: translateX(2%) rotate(-70deg);
+    }
+}
+
+.line3 {
+    top: 67%;
+    transform: rotate(-50deg) scale(1.3);
+    border-radius: 80%;
+    animation: auroraMoveLine3 12s ease-in-out infinite alternate;
+}
+
+@keyframes auroraMoveLine3 {
+    from {
+        transform: translateX(-2%) rotate(-75deg);
+    }
+
+    to {
+        transform: translateX(2%) rotate(-100deg);
+    }
 }
 
 header{
@@ -54,10 +116,43 @@ justify-content:space-between;
 align-items:center;
 }
 
-.logo{
-font-size:1.5rem;
-font-weight:700;
-color:var(--color-accent);
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 72px;
+    height: 72px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle at 30% 25%,var(--color-highlight) 0%,transparent 45%),
+        radial-gradient(circle at 70% 75%,var(--color-shadow) 0%,transparent 45%),
+        linear-gradient(-135deg,var(--secondary-surface),var(--secondary-bg));
+
+    transition: transform 0.2s ease, background 0.5s ease;
+}
+
+.social-links img {
+    width: 40px;
+    height: 40px;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    background:
+        radial-gradient(circle at 30% 25%,var(--color-highlight) 0%,transparent 45%),
+        radial-gradient(circle at 70% 75%,var(--color-shadow) 0%,transparent 45%),
+        linear-gradient(-135deg, var(--color-surface), var(--color-bg));
 }
 
 .nav-links{
@@ -78,7 +173,7 @@ color:var(--color-accent);
 }
 
 .hero{
-height:90vh;
+height:60vh;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -137,9 +232,7 @@ gap:25px;
     background:
         linear-gradient(to bottom, var(--color-highlight) 0%, transparent 10%),
         linear-gradient(to top, var(--color-shadow) 0%, transparent 10%),
-        linear-gradient(-135deg, var(--secondary-surface
-), var(--secondary-bg
-));
+        linear-gradient(-135deg, var(--secondary-surface), var(--secondary-bg));
 
     box-shadow: 0 15px 40px var(--color-shadow);
 }
