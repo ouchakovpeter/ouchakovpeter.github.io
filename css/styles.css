@@ -16,6 +16,23 @@
     --color-shadow: rgba(0, 0, 0, 0.9);
 }
 
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(29, 83, 184);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: gray;
+  background-color: transparent;
+  text-decoration: underline;
+}
 
 *{
 margin:0;
@@ -68,11 +85,11 @@ color:var(--color-text);
 
 @keyframes auroraMoveLine2 {
     from {
-        transform: translateX(-2%) rotate(-65deg);
+        transform: translateX(-2%) rotate(-70deg);
     }
 
     to {
-        transform: translateX(2%) rotate(-70deg);
+        transform: translateX(2%) rotate(-65deg);
     }
 }
 
