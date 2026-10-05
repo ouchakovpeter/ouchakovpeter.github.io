@@ -40,7 +40,17 @@ padding:0;
 box-sizing:border-box;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    min-height: 100%;
+}
+
+
 body{
+min-height: 100vh;
+display: flex;
+flex-direction: column;
 font-family: "Segoe UI", sans-serif;
 line-height:1.6;
 background:
@@ -51,12 +61,14 @@ color:var(--color-text);
 }
 
 .aurora-line {
-    position: absolute;
+    position: fixed;
     width: 120%;
     height: 160px;
     left: 15%;
     border-top: 20px solid rgba(168, 224, 245, 0.507);
     filter: blur(100px);
+    pointer-events: none;
+    z-index: -1;
 }
 
 .line1 {
@@ -304,5 +316,5 @@ background:
     linear-gradient(to bottom, var(--color-highlight) 0%, transparent 25%),
     linear-gradient(to top, var(--color-shadow) 0%, transparent 15%),
     linear-gradient(135deg, var(--secondary-surface), var(--secondary-bg));
-margin-top:40px;
+margin-top:auto;
 }
