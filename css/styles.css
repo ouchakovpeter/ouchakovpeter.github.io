@@ -69,7 +69,7 @@ a:hover {
     top: 50%;
     border-radius: 10%;
 
-    animation: auroraMoveLine1 12s ease-in-out infinite alternate;
+    animation: auroraMoveLine1 8s ease-in-out infinite alternate;
 }
 
 @keyframes auroraMoveLine1 {
@@ -86,7 +86,7 @@ a:hover {
     top: 58%;
     border-radius: 50%;
 
-    animation: auroraMoveLine2 12s ease-in-out infinite alternate;
+    animation: auroraMoveLine2 10s ease-in-out infinite alternate;
 }
 
 @keyframes auroraMoveLine2 {
@@ -103,7 +103,7 @@ a:hover {
     top: 67%;
     border-radius: 80%;
 
-    animation: auroraMoveLine3 12s ease-in-out infinite alternate;
+    animation: auroraMoveLine3 10s ease-in-out infinite alternate;
 }
 
 @keyframes auroraMoveLine3 {
