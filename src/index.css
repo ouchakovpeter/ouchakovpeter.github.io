@@ -205,6 +205,10 @@ header {
     text-align: center;
 }
 
+.introduction a{
+    display: block;
+}
+
 /* Skills */
 
 .skills-grid {
@@ -274,4 +278,76 @@ footer {
     margin-top: auto;
     padding: 25px;
     text-align: center;
+}
+
+.project-page {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 0;
+}
+
+.project-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.project-header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.project-header p {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    font-size: 1.2rem;
+}
+
+.project-status {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    font-size: 0.9rem;
+}
+
+.project-section {
+    margin-bottom: 70px;
+}
+
+.project-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.project-section p {
+    max-width: 800px;
+    line-height: 1.8;
+}
+
+.project-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-technologies span {
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.project-gallery img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.project-gallery img:first-child {
+    grid-column: span 2;
 }

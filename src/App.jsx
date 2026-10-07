@@ -1,12 +1,23 @@
-
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./index.css";
+import ProjectPage from "./pages/ProjectPage";
+import Aurora from "./components/Aurora";
 
 function App() {
     return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/projects/:projectId" element={<ProjectPage />} />
+            </Routes>
+        </BrowserRouter>
+    );
+}
+
+function Home() {
+    return (
         <>
-            <div className="aurora-line line1"></div>
-            <div className="aurora-line line2"></div>
-            <div className="aurora-line line3"></div>
+            <Aurora />
 
             <header>
                 <nav className="navbar">
@@ -74,6 +85,11 @@ function App() {
 
             <div className="introduction">
                 <p>A proper introduction is coming soon.</p>
+
+                <Link to="/projects/game">
+                    {/* Game Project */}
+                </Link>
+
             </div>
 
             <footer>
