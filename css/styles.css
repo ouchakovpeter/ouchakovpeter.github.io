@@ -131,7 +131,7 @@ border-bottom: none;
 background: 
     linear-gradient(to bottom, var(--color-highlight) 0%, transparent 25%),
     linear-gradient(to top, var(--color-shadow) 0%, transparent 15%),
-    linear-gradient(135deg, var(--secondary-surface), var(--secondary-bg));
+    linear-gradient(var(--secondary-surface), var(--secondary-bg));
 padding:15px 40px;
 z-index:1000;
 box-shadow:
@@ -315,6 +315,6 @@ border-bottom: none;
 background: 
     linear-gradient(to bottom, var(--color-highlight) 0%, transparent 25%),
     linear-gradient(to top, var(--color-shadow) 0%, transparent 15%),
-    linear-gradient(135deg, var(--secondary-surface), var(--secondary-bg));
+    linear-gradient(var(--secondary-surface), var(--secondary-bg));
 margin-top:auto;
 }
