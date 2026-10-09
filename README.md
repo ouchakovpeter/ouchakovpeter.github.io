@@ -13,3 +13,5 @@ Copyright (c) 2025 Mart
 The original software is provided "AS IS", without warranty of any kind.
 
 Original repository: https://github.com/linkev/PlayStation-3-XMB
+
+Its really cool, I recommend checking it out.
