@@ -84,7 +84,20 @@ function Home() {
             </section>
 
             <div className="introduction">
-                <p>A proper introduction is coming soon.</p>
+
+                <p>
+                    A proper introduction is coming soon.
+                </p>
+
+                {/* <p>
+                    I'm a Computer Science student at Carleton University focused on
+                    Software Engineering.
+                </p>
+
+                <p>
+                    I enjoy designing and creating software that solves real problems,
+                    makes something easier, or is simply interesting to build.
+                </p> */}
 
                 <Link to="/projects/game">
                     {/* Game Project */}
