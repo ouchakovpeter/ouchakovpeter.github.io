@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./index.css";
 import ProjectPage from "./pages/ProjectPage";
 import Aurora from "./components/Aurora";
+import XMBbackground from "./components/XMBbackground";
 
 function App() {
     return (
@@ -17,7 +18,8 @@ function App() {
 function Home() {
     return (
         <>
-            <Aurora />
+            <XMBbackground />
+            {/* <Aurora /> */}
 
             <header>
                 <nav className="navbar">
