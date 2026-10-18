@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import { projects } from "../data/projects";
-import Aurora from "../components/Aurora";
 
 function ProjectPage() {
     const { projectId } = useParams();
@@ -16,28 +15,20 @@ function ProjectPage() {
 
     return (
         <>
-            <Aurora />
-
             <main className="project-page">
-                <h1>{project.title}</h1>
+                <h1 className="project-title">{project.title}</h1>
 
-                <p>{project.description}</p>
-
-                <p>{project.status}</p>
+                <p className="project-description">{project.description}</p>
 
                 <h2>Technologies</h2>
 
-                <ul>
+                <ul className="tech-list">
                     {project.technologies.map((technology) => (
                         <li key={technology}>{technology}</li>
                     ))}
                 </ul>
 
-                <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+                <a className="project-github" href={project.github} target="_blank" rel="noopener noreferrer">
                     View on GitHub
                 </a>
             </main>

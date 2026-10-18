@@ -170,12 +170,7 @@
       const aspect = canvas.width / canvas.height;
       const flow = settings.flowSpeed;
 
-      // Match the scroll progress used by the background and wave.
-      const maxScroll =
-        document.documentElement.scrollHeight - window.innerHeight;
-
-      const scrollProgress =
-        maxScroll > 0 ? window.scrollY / maxScroll : 0;
+      const scrollProgress = (window.scrollY / window.innerHeight) * 2.0;
 
       gl.enable(gl.BLEND);
       gl.blendFunc(gl.ONE, gl.ONE);
