@@ -461,3 +461,43 @@ footer {
     height: 60vh;
 }
 
+@media print {
+  /* Use a white background when printing */
+  html,
+  body,
+  #root {
+    background: white !important;
+    color: black !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Hide animated/WebGL backgrounds */
+  canvas,
+  .xmb-background,
+  .aurora-line {
+    display: none !important;
+  }
+
+  /* Make text readable */
+  * {
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Prevent dark panels from printing black */
+  section,
+  article,
+  .panel,
+  .card {
+    background: white !important;
+    color: black !important;
+    border-color: #ccc !important;
+  }
+
+  a {
+    color: #0645ad !important;
+    text-decoration: underline;
+  }
+}
