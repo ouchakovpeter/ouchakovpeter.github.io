@@ -2,13 +2,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import Projects from "./components/Projects";
 import ProjectPage from "./pages/ProjectPage";
-// import Aurora from "./components/Aurora";
 import XMBbackground from "./components/XMBbackground";
+// import Aquarium from "./components/Aquarium";
 
 function App() {
     return (
         <BrowserRouter>
             <XMBbackground />
+            {/* <Aquarium /> */}
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/projects/:projectId" element={<ProjectPage />} />
@@ -28,8 +29,8 @@ function Home() {
 
                     <ul className="nav-links">
                         <li><a href="#about">About</a></li>
-                        <li><a href="#projects">Projects</a></li>
                         <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
                     </ul>
                 </nav>
             </header>
@@ -132,6 +133,8 @@ function Home() {
                 <Projects />
 
             </section>
+
+            <div className="bottom-space"></div>
 
             <footer>
                 <p>© 2026 Peter Ouchakov</p>

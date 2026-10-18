@@ -11,6 +11,7 @@ export const projects = {
     description: "An ongoing pseudo 3D isometric town-building and management game built in Java. Features a custom game engine with procedural terrain. I’m planning on adding resources, buildings, and population systems, combining simulation mechanics with real-time rendering. Developed as a long-term project to explore game architecture, graphics programming, and interactive systems. Inspired by Clash of Clans and other RTS games.",
     technologies: ["Java, OpenGL, GLSL, Game Development, Graphics Programming, Simulation Systems, Object-Oriented Programming"],
     github: "https://github.com/ouchakovpeter/CivGame",
+    images: ["/assets/projects/civgame-1.webp"],
     // page: "/projects/game",
   },
   moviedatabase: {
@@ -18,6 +19,7 @@ export const projects = {
     description: "A movie database web application built with Python, Flask, and SQLite as part of COMP 3005, Database Management Systems. Includes a browser-based interface for interacting with movie data, alongside database initialization, schema management, and sample records.",
     technologies: ["Python, Flask, SQLite, SQL, HTML, CSS, Database Design"],
     github: "https://github.com/ouchakovpeter/Movie_Database",
+    images: ["/assets/projects/movie_database-1.webp"],
     // page: "/projects/moviedatabase"
   },
   antquisition: {
@@ -25,6 +27,7 @@ export const projects = {
     description: "A collaborative game development project created for COMP 1501, Intro to Computer Game Design. Built with Godot, the project combines gameplay scripts, godot scenes, audio, and custom assets into an interactive application. Developed as part of a team-based course project, providing experience with game development workflows and project organization.",
     technologies: ["Godot, GDScript, Game Development, UI Design, Asset Integration, Asset Design, Git, Team Collaboration"],
     github: "https://github.com/Uvernes/COMP1501FinalProject",
+    images: ["/assets/projects/antquisition-1.webp"],
     // page: "/projects/antquisition"
   },
   homelab: {
