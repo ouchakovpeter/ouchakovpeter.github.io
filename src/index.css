@@ -245,9 +245,8 @@ header {
 }
 
 .skill-list {
-    opacity: 0.7;
+    
 }
-
 
 /* Projects */
 
@@ -257,7 +256,7 @@ header {
 }
 
 .project-card {
-    padding: 15px;
+    padding: 10px 25px;
 }
 
 .project-card h3 {
