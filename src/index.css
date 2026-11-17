@@ -424,6 +424,11 @@ header {
     height: 2.5rem;
 }
 
+.social-links a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--color-shadow);
+}
+
 
 /* Contact */
 
