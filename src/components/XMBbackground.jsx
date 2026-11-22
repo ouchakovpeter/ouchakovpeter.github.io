@@ -9,18 +9,35 @@ const scripts = [
   "/xmb/spline-reverse.js",
   "/xmb/spline.js",
   "/xmb/particles.js",
-]; 
+];
+
+// Cache scripts so they aren't downloaded again.
+const scriptCache = new Map();
 
 function loadScript(src) {
-  return new Promise((resolve, reject) => {
+  if (scriptCache.has(src)) {
+    return scriptCache.get(src);
+  }
+
+  const promise = new Promise((resolve, reject) => {
     const script = document.createElement("script");
+
+    // Preserve execution order while downloading in parallel.
+    script.async = false;
     script.src = src;
+
     script.onload = resolve;
-    script.onerror = () =>
+
+    script.onerror = () => {
+      scriptCache.delete(src);
       reject(new Error(`Failed to load ${src}`));
+    };
 
     document.head.appendChild(script);
   });
+
+  scriptCache.set(src, promise);
+  return promise;
 }
 
 export default function XMBBackground() {
@@ -33,14 +50,14 @@ export default function XMBBackground() {
 
     async function initialize() {
       try {
-        // Load the original XMB JavaScript files in order.
-        for (const src of scripts) {
-          await loadScript(src);
-        }
+        // Download all scripts concurrently.
+        // They will still execute in their original order.
+        await Promise.all(scripts.map(loadScript));
 
         if (cancelled) return;
 
         const canvas = canvasRef.current;
+        if (!canvas) return;
 
         const gl = canvas.getContext("webgl2", {
           antialias: true,
@@ -57,19 +74,32 @@ export default function XMBBackground() {
         gl.getExtension("EXT_color_buffer_float");
 
         function resize() {
-            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+          const dpr = Math.min(
+            window.devicePixelRatio || 1,
+            2
+          );
 
-            canvas.width = Math.floor(window.innerWidth * dpr);
-            canvas.height = Math.floor(window.innerHeight * dpr);
+          canvas.width = Math.floor(
+            window.innerWidth * dpr
+          );
 
-            gl.viewport(0, 0, canvas.width, canvas.height);
+          canvas.height = Math.floor(
+            window.innerHeight * dpr
+          );
+
+          gl.viewport(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+          );
         }
 
         resizeHandler = resize;
         window.addEventListener("resize", resize);
         resize();
 
-        // Create the animated layers.
+        // Initialize the original XMB animations.
         const spline = window.createSplineLayer(gl, canvas);
         const particles = window.createParticlesLayer(gl, canvas);
 
@@ -92,10 +122,14 @@ export default function XMBBackground() {
           spline.render(splineTime);
           particles.render(particlesTime);
 
+          // Reveal the canvas after its first frame.
+          canvas.classList.add("xmb-ready");
+
           animationId = requestAnimationFrame(frame);
         }
 
         animationId = requestAnimationFrame(frame);
+
       } catch (error) {
         console.error("XMB initialization failed:", error);
       }
@@ -105,6 +139,7 @@ export default function XMBBackground() {
 
     return () => {
       cancelled = true;
+
       cancelAnimationFrame(animationId);
 
       if (resizeHandler) {

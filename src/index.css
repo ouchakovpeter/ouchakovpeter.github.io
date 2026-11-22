@@ -68,6 +68,14 @@ a:hover {
     display: block;
     z-index: -1;
     pointer-events: none;
+
+    opacity: 0;
+    background: #080b16;
+    transition: opacity 0.4s ease;
+}
+
+.xmb-canvas.xmb-ready {
+    opacity: 1;
 }
 
 /* Aurora */
